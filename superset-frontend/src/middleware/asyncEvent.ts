@@ -79,6 +79,7 @@ const initAsyncEvents = (options: AsyncEventOptions) => {
     try {
       lastReceivedEventId = localStorage.getItem(LOCALSTORAGE_KEY);
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.warn('Failed to fetch last event Id from localStorage');
     }
 
@@ -114,6 +115,7 @@ const initAsyncEvents = (options: AsyncEventOptions) => {
       try {
         localStorage.setItem(LOCALSTORAGE_KEY, lastReceivedEventId as string);
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.warn('Error saving event Id to localStorage', err);
       }
     };
@@ -139,6 +141,7 @@ const initAsyncEvents = (options: AsyncEventOptions) => {
             events.forEach((asyncEvent: AsyncEvent) => {
               const component = componentsByJobId[asyncEvent.job_id];
               if (!component) {
+                // eslint-disable-next-line no-console
                 console.warn(
                   'Component not found for job_id',
                   asyncEvent.job_id,
@@ -158,6 +161,7 @@ const initAsyncEvents = (options: AsyncEventOptions) => {
                   );
                   break;
                 default:
+                  // eslint-disable-next-line no-console
                   console.warn('Received event with status', asyncEvent.status);
               }
 
@@ -177,6 +181,7 @@ const initAsyncEvents = (options: AsyncEventOptions) => {
             });
           }
         } catch (err) {
+          // eslint-disable-next-line no-console
           console.warn(err);
         }
       }

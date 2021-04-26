@@ -104,6 +104,7 @@ export function fetchAllSlices(userId) {
         })
         .catch(
           errorResponse =>
+            // eslint-disable-next-line no-console
             console.log(errorResponse) ||
             getClientErrorObject(errorResponse).then(({ error }) => {
               dispatch(

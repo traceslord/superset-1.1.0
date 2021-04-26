@@ -56,6 +56,7 @@ import {
 } from '../../logger/LogUtils';
 
 const propTypes = {
+  // eslint-disable-next-line react/forbid-foreign-prop-types
   ...ExploreChartPanel.propTypes,
   height: PropTypes.string,
   width: PropTypes.string,

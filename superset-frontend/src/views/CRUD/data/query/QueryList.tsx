@@ -93,7 +93,7 @@ const StatusIcon = styled(Icon, {
   }};
 `;
 
-function QueryList({ addDangerToast, addSuccessToast }: QueryListProps) {
+function QueryList({ addDangerToast }: QueryListProps) {
   const {
     state: { loading, resourceCount: queryCount, resourceCollection: queries },
     fetchData,

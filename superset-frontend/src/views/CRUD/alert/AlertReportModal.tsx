@@ -680,8 +680,73 @@ const AlertReportModal: FunctionComponent<AlertReportModalProps> = ({
           value: item.value,
           label: item.text,
         })),
-      badResponse => [],
+      () => [],
     );
+  };
+
+  // Updating alert/report state
+  const updateAlertState = (name: string, value: any) => {
+    setCurrentAlert(currentAlertData => ({
+      ...currentAlertData,
+      [name]: value,
+    }));
+  };
+
+  const getSourceData = (db?: MetaObject) => {
+    const database = db || currentAlert?.database;
+
+    if (!database || database.label) {
+      return null;
+    }
+
+    let result;
+
+    // Cycle through source options to find the selected option
+    sourceOptions.forEach(source => {
+      if (source.value === database.value || source.value === database.id) {
+        result = source;
+      }
+    });
+
+    return result;
+  };
+
+  const getDashboardData = (db?: MetaObject) => {
+    const dashboard = db || currentAlert?.dashboard;
+
+    if (!dashboard || dashboard.label) {
+      return null;
+    }
+
+    let result;
+
+    // Cycle through dashboard options to find the selected option
+    dashboardOptions.forEach(dash => {
+      if (dash.value === dashboard.value || dash.value === dashboard.id) {
+        result = dash;
+      }
+    });
+
+    return result;
+  };
+
+  const getChartData = (chartData?: MetaObject) => {
+    const chart = chartData || currentAlert?.chart;
+
+    if (!chart || chart.label) {
+      return null;
+    }
+
+    let result;
+
+    // Cycle through chart options to find the selected option
+    chartOptions.forEach(slice => {
+      if (slice.value === chart.value || slice.value === chart.id) {
+        result = slice;
+      }
+    });
+
+    return result;
   };
 
   const loadSourceOptions = (input = '') => {
@@ -708,27 +773,8 @@ const AlertReportModal: FunctionComponent<AlertReportModalProps> = ({
 
         return list;
       },
-      badResponse => [],
+      () => [],
     );
-  };
-
-  const getSourceData = (db?: MetaObject) => {
-    const database = db || currentAlert?.database;
-
-    if (!database || database.label) {
-      return null;
-    }
-
-    let result;
-
-    // Cycle through source options to find the selected option
-    sourceOptions.forEach(source => {
-      if (source.value === database.value || source.value === database.id) {
-        result = source;
-      }
-    });
-
-    return result;
   };
 
   const loadDashboardOptions = (input = '') => {
@@ -755,27 +801,8 @@ const AlertReportModal: FunctionComponent<AlertReportModalProps> = ({
 
         return list;
       },
-      badResponse => [],
+      () => [],
     );
-  };
-
-  const getDashboardData = (db?: MetaObject) => {
-    const dashboard = db || currentAlert?.dashboard;
-
-    if (!dashboard || dashboard.label) {
-      return null;
-    }
-
-    let result;
-
-    // Cycle through dashboard options to find the selected option
-    dashboardOptions.forEach(dash => {
-      if (dash.value === dashboard.value || dash.value === dashboard.id) {
-        result = dash;
-      }
-    });
-
-    return result;
   };
 
   const loadChartOptions = (input = '') => {
@@ -798,35 +825,8 @@ const AlertReportModal: FunctionComponent<AlertReportModalProps> = ({
 
         return list;
       },
-      badResponse => [],
+      () => [],
     );
-  };
-
-  const getChartData = (chartData?: MetaObject) => {
-    const chart = chartData || currentAlert?.chart;
-
-    if (!chart || chart.label) {
-      return null;
-    }
-
-    let result;
-
-    // Cycle through chart options to find the selected option
-    chartOptions.forEach(slice => {
-      if (slice.value === chart.value || slice.value === chart.id) {
-        result = slice;
-      }
-    });
-
-    return result;
-  };
-
-  // Updating alert/report state
-  const updateAlertState = (name: string, value: any) => {
-    setCurrentAlert(currentAlertData => ({
-      ...currentAlertData,
-      [name]: value,
-    }));
   };
 
   // Handle input/textarea updates

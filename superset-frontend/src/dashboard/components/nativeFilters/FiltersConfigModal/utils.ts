@@ -84,6 +84,7 @@ export const validateForm = async (
 
     return formValues;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.warn('Filter configuration failed:', error);
 
     if (!error.errorFields || !error.errorFields.length) return null; // not a validation error
