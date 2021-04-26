@@ -58,6 +58,7 @@ describe('exploreUtils', () => {
       });
       compareURI(URI(url), URI('/superset/explore/'));
     });
+    // eslint-disable-next-line jest/expect-expect
     it('generates proper json url', () => {
       const url = getExploreUrl({
         formData,
@@ -67,6 +68,7 @@ describe('exploreUtils', () => {
       });
       compareURI(URI(url), URI('/superset/explore_json/'));
     });
+    // eslint-disable-next-line jest/expect-expect
     it('generates proper json forced url', () => {
       const url = getExploreUrl({
         formData,
@@ -79,6 +81,7 @@ describe('exploreUtils', () => {
         URI('/superset/explore_json/').search({ force: 'true' }),
       );
     });
+    // eslint-disable-next-line jest/expect-expect
     it('generates proper csv URL', () => {
       const url = getExploreUrl({
         formData,
@@ -91,6 +94,7 @@ describe('exploreUtils', () => {
         URI('/superset/explore_json/').search({ csv: 'true' }),
       );
     });
+    // eslint-disable-next-line jest/expect-expect
     it('generates proper standalone URL', () => {
       const url = getExploreUrl({
         formData,
@@ -105,6 +109,7 @@ describe('exploreUtils', () => {
         }),
       );
     });
+    // eslint-disable-next-line jest/expect-expect
     it('preserves main URLs params', () => {
       const url = getExploreUrl({
         formData,
@@ -117,6 +122,7 @@ describe('exploreUtils', () => {
         URI('/superset/explore_json/').search({ foo: 'bar' }),
       );
     });
+    // eslint-disable-next-line jest/expect-expect
     it('generate proper save slice url', () => {
       const url = getExploreUrl({
         formData,
@@ -196,6 +202,7 @@ describe('exploreUtils', () => {
   });
 
   describe('getExploreLongUrl', () => {
+    // eslint-disable-next-line jest/expect-expect
     it('generates proper base url with form_data', () => {
       compareURI(
         URI(getExploreLongUrl(formData, 'base')),
@@ -203,6 +210,7 @@ describe('exploreUtils', () => {
       );
     });
 
+    // eslint-disable-next-line jest/expect-expect
     it('generates url with standalone', () => {
       compareURI(
         URI(getExploreLongUrl(formData, 'standalone')),
