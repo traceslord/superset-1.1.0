@@ -39,6 +39,7 @@ export const useRemoveCurrentFilter = (
       if (nextFilterIndex !== -1)
         setCurrentFilterId(filterIds[nextFilterIndex]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentFilterId, removedFilters, filterIds]);
 };
 

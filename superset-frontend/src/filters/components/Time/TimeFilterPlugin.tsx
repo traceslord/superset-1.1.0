@@ -51,10 +51,12 @@ export default function TimeFilterPlugin(props: PluginFilterTimeProps) {
 
   useEffect(() => {
     handleTimeRangeChange(currentValue ?? DEFAULT_VALUE);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentValue]);
 
   useEffect(() => {
     handleTimeRangeChange(defaultValue ?? DEFAULT_VALUE);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultValue]);
 
   return (

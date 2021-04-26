@@ -450,6 +450,7 @@ const DatasetList: FunctionComponent<DatasetListProps> = ({
         operator: 'ct',
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 

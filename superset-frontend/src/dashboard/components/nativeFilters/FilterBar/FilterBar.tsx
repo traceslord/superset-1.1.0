@@ -225,6 +225,7 @@ const FilterBar: React.FC<FiltersBarProps> = ({
     if (filterConfigs.length === 0 && filtersOpen) {
       toggleFiltersBar(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterConfigs]);
 
   const cascadeChildren = useMemo(
@@ -295,6 +296,7 @@ const FilterBar: React.FC<FiltersBarProps> = ({
     if (isInitialized) {
       handleApply();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInitialized]);
 
   const handleSaveFilterSets = () => {

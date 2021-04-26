@@ -196,6 +196,7 @@ const CssTemplateModal: FunctionComponent<CssTemplateModalProps> = ({
         css: '',
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cssTemplate]);
 
   useEffect(() => {
@@ -207,8 +208,11 @@ const CssTemplateModal: FunctionComponent<CssTemplateModalProps> = ({
   // Validation
   useEffect(() => {
     validate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     currentCssTemplate ? currentCssTemplate.template_name : '',
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     currentCssTemplate ? currentCssTemplate.css : '',
   ]);
 

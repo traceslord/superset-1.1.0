@@ -76,12 +76,15 @@ export default function PluginFilterSelect(props: PluginFilterSelectProps) {
 
   useEffect(() => {
     handleChange(currentValue ?? []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(currentValue)]);
 
   useEffect(() => {
     handleChange(defaultValue ?? []);
     // I think after Config Modal update some filter it re-creates default value for all other filters
     // so we can process it like this `JSON.stringify` or start to use `Immer`
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(defaultValue)]);
 
   const placeholderText =

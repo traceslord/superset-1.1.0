@@ -980,6 +980,7 @@ const AlertReportModal: FunctionComponent<AlertReportModalProps> = ({
       setNotificationSettings([]);
       setNotificationAddState('active');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [alert]);
 
   useEffect(() => {
@@ -1038,12 +1039,14 @@ const AlertReportModal: FunctionComponent<AlertReportModalProps> = ({
             : validatorConfig,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resource]);
 
   // Validation
   const currentAlertSafe = currentAlert || {};
   useEffect(() => {
     validate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     currentAlertSafe.name,
     currentAlertSafe.owners,

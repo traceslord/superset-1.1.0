@@ -56,12 +56,15 @@ export default function RangeFilterPlugin(props: PluginFilterRangeProps) {
 
   useEffect(() => {
     handleAfterChange(currentValue ?? [min, max]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(currentValue)]);
 
   useEffect(() => {
     handleAfterChange(defaultValue ?? [min, max]);
     // I think after Config Modal update some filter it re-creates default value for all other filters
     // so we can process it like this `JSON.stringify` or start to use `Immer`
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(defaultValue)]);
 
   return (

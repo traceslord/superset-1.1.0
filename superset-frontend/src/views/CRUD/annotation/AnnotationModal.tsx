@@ -236,9 +236,13 @@ const AnnotationModal: FunctionComponent<AnnotationModalProps> = ({
   // Validation
   useEffect(() => {
     validate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     currentAnnotation ? currentAnnotation.short_descr : '',
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     currentAnnotation ? currentAnnotation.start_dttm : '',
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     currentAnnotation ? currentAnnotation.end_dttm : '',
   ]);
 

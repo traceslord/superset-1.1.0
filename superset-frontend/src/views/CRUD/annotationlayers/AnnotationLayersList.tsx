@@ -254,6 +254,7 @@ function AnnotationLayersList({
         size: 'xl',
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [canDelete, canCreate],
   );
 
@@ -309,6 +310,7 @@ function AnnotationLayersList({
         operator: 'ct',
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 

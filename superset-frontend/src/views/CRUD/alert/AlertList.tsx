@@ -141,6 +141,7 @@ function AlertList({
     if (bulkSelectEnabled && canDelete) {
       toggleBulkSelect();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isReportEnabled]);
 
   const handleAlertDelete = ({ id, name }: AlertObject) => {
@@ -330,6 +331,7 @@ function AlertList({
         size: 'xl',
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [canDelete, canEdit, isReportEnabled],
   );
 
@@ -407,6 +409,7 @@ function AlertList({
         operator: FilterOperators.contains,
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 

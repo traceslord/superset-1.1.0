@@ -189,8 +189,11 @@ const AnnotationLayerModal: FunctionComponent<AnnotationLayerModalProps> = ({
   // Validation
   useEffect(() => {
     validate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     currentLayer ? currentLayer.name : '',
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     currentLayer ? currentLayer.descr : '',
   ]);
 

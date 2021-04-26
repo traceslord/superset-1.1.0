@@ -233,6 +233,7 @@ function CssTemplatesList({
         size: 'xl',
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [canDelete, canCreate],
   );
 
@@ -295,6 +296,7 @@ function CssTemplatesList({
         operator: 'ct',
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 

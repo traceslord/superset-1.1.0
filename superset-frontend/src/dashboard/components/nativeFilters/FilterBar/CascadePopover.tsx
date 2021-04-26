@@ -142,6 +142,7 @@ const CascadePopover: React.FC<CascadePopoverProps> = ({
     if (focusedInactiveFilter) {
       onVisibleChange(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPathToChild]);
 
   if (!filter.cascadeChildren?.length) {

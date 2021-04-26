@@ -85,6 +85,7 @@ export function useListViewResource<D extends object = any>(
         ),
       ),
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function hasPerm(perm: string) {
@@ -154,6 +155,7 @@ export function useListViewResource<D extends object = any>(
           updateState({ loading: false });
         });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [baseFilters],
   );
 
@@ -242,6 +244,7 @@ export function useSingleViewResource<D extends object = any>(
           updateState({ loading: false });
         });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [handleErrorMsg, resourceName, resourceLabel],
   );
 
@@ -283,6 +286,7 @@ export function useSingleViewResource<D extends object = any>(
           updateState({ loading: false });
         });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [handleErrorMsg, resourceName, resourceLabel],
   );
 
@@ -326,6 +330,7 @@ export function useSingleViewResource<D extends object = any>(
           updateState({ loading: false });
         });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [handleErrorMsg, resourceName, resourceLabel],
   );
   const clearError = () =>
@@ -465,6 +470,7 @@ export function useImportResource(
           updateState({ loading: false });
         });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 
@@ -524,6 +530,7 @@ export function useFavoriteStatus(
         ),
       ),
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ids]);
 
   const saveFaveStar = useCallback(
@@ -546,6 +553,7 @@ export function useFavoriteStatus(
         ),
       );
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [type],
   );
 

@@ -73,6 +73,7 @@ export const useBackendFormUpdate = (
       });
       forceUpdate();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     formFilter?.filterType,
     formFilter?.column,

@@ -352,6 +352,7 @@ function DashboardList(props: DashboardListProps) {
         disableSortBy: true,
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [canEdit, canDelete, canExport, favoriteStatus],
   );
 

@@ -151,6 +151,7 @@ function useWindowSize({ delayMs = 250 } = {}) {
     const onWindowResize = debounce(() => setSize(getWindowSize()), delayMs);
     window.addEventListener('resize', onWindowResize);
     return () => window.removeEventListener('resize', onWindowResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return size;
@@ -278,6 +279,7 @@ function ExploreViewContainer(props) {
       window.removeEventListener('popstate', handlePopstate);
       document.removeEventListener('keydown', handleKeydown);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -285,6 +287,7 @@ function ExploreViewContainer(props) {
       // reload the controls now that we actually have the control config
       props.actions.dynamicPluginControlsReady();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDynamicPluginLoading]);
 
   useEffect(() => {
@@ -295,6 +298,7 @@ function ExploreViewContainer(props) {
     if (!hasError) {
       props.actions.triggerQuery(true, props.chart.id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // effect to run when controls change
@@ -331,6 +335,7 @@ function ExploreViewContainer(props) {
         addHistory();
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.controls]);
 
   const chartIsStale = useMemo(() => {

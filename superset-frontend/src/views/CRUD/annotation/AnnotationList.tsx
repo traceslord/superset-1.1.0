@@ -96,6 +96,7 @@ function AnnotationList({
         });
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [annotationLayerId],
   );
 
@@ -197,6 +198,7 @@ function AnnotationList({
         disableSortBy: true,
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [true, true],
   );
 

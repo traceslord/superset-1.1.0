@@ -218,6 +218,7 @@ export default function DateFilterControl(props: DateFilterLabelProps) {
         setValidTimeRange(true);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   useEffect(() => {
@@ -226,6 +227,7 @@ export default function DateFilterControl(props: DateFilterLabelProps) {
       setTimeRangeValue('Last week');
       setFrame(guessFrame('Last week'));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [datasource]);
 
   useEffect(() => {
@@ -238,6 +240,7 @@ export default function DateFilterControl(props: DateFilterLabelProps) {
         setValidTimeRange(true);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeRangeValue]);
 
   function onSave() {

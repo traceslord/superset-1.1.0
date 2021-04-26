@@ -90,10 +90,12 @@ const FilterValue: React.FC<FilterProps> = ({
           setLoading(false);
         });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     cascadingFilters,
     datasetId,
     groupby,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     JSON.stringify(filter),
     hasDataSource,
   ]);

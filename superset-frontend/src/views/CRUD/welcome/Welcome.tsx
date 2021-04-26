@@ -123,6 +123,7 @@ function Welcome({ user, addDangerToast }: WelcomeProps) {
           );
         }),
       );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -59,6 +59,7 @@ export function useFilterScopeTree(): {
 
   useMemo(() => {
     buildTree(layout[DASHBOARD_ROOT_ID], tree, layout, charts, validNodes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charts, layout, tree]);
 
   return { treeData: [tree], layout };
