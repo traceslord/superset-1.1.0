@@ -144,6 +144,7 @@ describe('async actions', () => {
       });
     });
 
+    // eslint-disable-next-line jest/no-disabled-tests
     it.skip('parses large number result without losing precision', () =>
       makeRequest().then(() => {
         expect(fetchMock.calls(fetchQueryEndpoint)).toHaveLength(1);
@@ -212,6 +213,7 @@ describe('async actions', () => {
       });
     });
 
+    // eslint-disable-next-line jest/no-disabled-tests
     it.skip('parses large number result without losing precision', () =>
       makeRequest().then(() => {
         expect(fetchMock.calls(runQueryEndpoint)).toHaveLength(1);

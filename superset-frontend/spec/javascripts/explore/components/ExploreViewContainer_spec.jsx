@@ -32,6 +32,8 @@ import * as featureFlags from 'src/featureFlags';
 // are actually testing particularly useful things,
 // and too many hacks were needed to get enzyme to play well with context.
 // Leaving it here in the hopes that someone can salvage this.
+
+// eslint-disable-next-line jest/no-disabled-tests
 describe.skip('ExploreViewContainer', () => {
   const middlewares = [thunk];
   const mockStore = configureStore(middlewares);

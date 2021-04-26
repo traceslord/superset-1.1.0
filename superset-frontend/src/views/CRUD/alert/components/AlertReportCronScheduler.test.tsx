@@ -40,6 +40,7 @@ describe('AlertReportCronScheduler', () => {
     expect(onChangeMock).toHaveBeenLastCalledWith(changeValue);
   });
 
+  // eslint-disable-next-line jest/no-disabled-tests
   it.skip('sets input value when cron picker changes', () => {
     const onChangeMock = jest.fn();
     wrapper = mount(
