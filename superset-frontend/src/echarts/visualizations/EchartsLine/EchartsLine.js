@@ -16,7 +16,6 @@ function drawChart(chart, teamData, teamIndex, propsConfig, propsLabel) {
       propsConfig.echartsGroupby,
       propsConfig.echartsGroupbyAggregate,
       propsConfig.echartsX,
-      propsConfig.echartsSelect,
     );
   }
   if (propsConfig.echartsSort) {

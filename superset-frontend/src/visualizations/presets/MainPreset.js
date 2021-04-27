@@ -65,7 +65,6 @@ import {
   TimeFilterPlugin,
 } from 'src/filters/components/';
 import EchartsLineChartPlugin from 'src/echarts/visualizations/EchartsLine/EchartsLineChartPlugin';
-import EchartsAggLineChartPlugin from 'src/echarts/visualizations/EchartsAggLine/EchartsAggLineChartPlugin';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
 import TimeTableChartPlugin from '../TimeTable/TimeTableChartPlugin';
 
@@ -118,7 +117,6 @@ export default class MainPreset extends Preset {
         new RangeFilterPlugin().configure({ key: 'filter_range' }),
         new TimeFilterPlugin().configure({ key: 'filter_time' }),
         new EchartsLineChartPlugin().configure({ key: 'echarts_line' }),
-        new EchartsAggLineChartPlugin().configure({ key: 'echarts_agg_line' }),
       ],
     });
   }
