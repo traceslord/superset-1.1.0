@@ -23,13 +23,16 @@ import setupPluginsExtra from './setupPluginsExtra';
 import Separator from '../explore/controlPanels/Separator';
 import TimeTable from '../explore/controlPanels/TimeTable';
 
+import EchartsLine from '../echarts/controlPanels/EchartsLine';
+
 export default function setupPlugins() {
   new MainPreset().register();
 
   // TODO: Remove these shims once the control panel configs are moved into the plugin package.
   getChartControlPanelRegistry()
     .registerValue('separator', Separator)
-    .registerValue('time_table', TimeTable);
+    .registerValue('time_table', TimeTable)
+    .registerValue('echarts_line', EchartsLine);
 
   setupPluginsExtra();
 }
