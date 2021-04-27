@@ -24,6 +24,7 @@ import Separator from '../explore/controlPanels/Separator';
 import TimeTable from '../explore/controlPanels/TimeTable';
 
 import EchartsLine from '../echarts/controlPanels/EchartsLine';
+import EchartsAggLine from '../echarts/controlPanels/EchartsAggLine';
 
 export default function setupPlugins() {
   new MainPreset().register();
@@ -32,7 +33,8 @@ export default function setupPlugins() {
   getChartControlPanelRegistry()
     .registerValue('separator', Separator)
     .registerValue('time_table', TimeTable)
-    .registerValue('echarts_line', EchartsLine);
+    .registerValue('echarts_line', EchartsLine)
+    .registerValue('echarts_agg_line', EchartsAggLine);
 
   setupPluginsExtra();
 }
