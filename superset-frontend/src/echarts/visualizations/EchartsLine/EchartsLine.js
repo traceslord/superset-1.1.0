@@ -1,4 +1,5 @@
 import { defaultby } from 'src/echarts/utils/defaultby';
+import { sceneby, scenelegendData } from 'src/echarts/utils/sceneby';
 import { groupby } from 'src/echarts/utils/groupby';
 import { sort } from 'src/echarts/utils/sort';
 import { formatColor } from 'src/echarts/utils/colors';
@@ -10,6 +11,15 @@ function drawChart(chart, teamData, teamIndex, propsConfig, propsLabel) {
   propsConfig = defaultby(propsConfig);
 
   let chartData = teamData[teamIndex];
+  if (propsConfig.echartsScene) {
+    chartData = sceneby(
+      chartData,
+      propsConfig.echartsScene,
+      propsConfig.echartsYLeft,
+      propsConfig.echartsX,
+      propsConfig.echartsXAxisDataFormatType,
+    );
+  }
   if (propsConfig.echartsGroupby) {
     chartData = groupby(
       chartData,
@@ -26,11 +36,17 @@ function drawChart(chart, teamData, teamIndex, propsConfig, propsLabel) {
   propsConfig.echartsLegendNotSelected.forEach(data => {
     legendNotSelected[propsLabel[data]] = false;
   });
-  const legendData = propsConfig.echartsYLeft.concat(propsConfig.echartsYRight);
-  const series = propsConfig.echartsYLeft
-    .map(item => ({
+  let legendData = propsConfig.echartsYLeft.concat(propsConfig.echartsYRight);
+  let series = [];
+  if (propsConfig.echartsScene === 'scene_1') {
+    legendData = scenelegendData(
+      teamData[teamIndex],
+      propsConfig.echartsScene,
+      propsConfig.echartsYLeft,
+    );
+    series = legendData.map(item => ({
       type: 'line',
-      name: propsLabel[item],
+      name: item,
       showSymbol: propsConfig.echartsSeriesShowSymbol,
       showAllSymbol: propsConfig.echartsSeriesShowAllSymbol,
       symbol: propsConfig.echartsSeriesSymbol,
@@ -56,41 +72,78 @@ function drawChart(chart, teamData, teamIndex, propsConfig, propsLabel) {
       stack: propsConfig.echartsSeriesStack,
       smooth: propsConfig.echartsSeriesSmooth,
       connectNulls: propsConfig.echartsSeriesConnectNulls,
-      data: chartData.map(data => data[item]),
-    }))
-    .concat(
-      propsConfig.echartsYRight.map(item => ({
+      data: chartData.map(data => (data[item] || {}).sum),
+    }));
+    series.push({
+      type: 'line',
+      data: chartData,
+    });
+  } else {
+    series = propsConfig.echartsYLeft
+      .map(item => ({
         type: 'line',
         name: propsLabel[item],
-        yAxisIndex: 1,
-        showSymbol: propsConfig.echartsSeriesShowSymbol2,
-        showAllSymbol: propsConfig.echartsSeriesShowAllSymbol2,
-        symbol: propsConfig.echartsSeriesSymbol2,
+        showSymbol: propsConfig.echartsSeriesShowSymbol,
+        showAllSymbol: propsConfig.echartsSeriesShowAllSymbol,
+        symbol: propsConfig.echartsSeriesSymbol,
         symbolSize: [
-          propsConfig.echartsSeriesSymbolSizeWidth2,
-          propsConfig.echartsSeriesSymbolSizeHeight2,
+          propsConfig.echartsSeriesSymbolSizeWidth,
+          propsConfig.echartsSeriesSymbolSizeHeight,
         ],
-        symbolRotate: propsConfig.echartsSeriesSymbolRotate2,
+        symbolRotate: propsConfig.echartsSeriesSymbolRotate,
         symbolOffset: [
-          propsConfig.echartsSeriesSymbolOffsetHorizontal2,
-          propsConfig.echartsSeriesSymbolOffsetVertical2,
+          propsConfig.echartsSeriesSymbolOffsetHorizontal,
+          propsConfig.echartsSeriesSymbolOffsetVertical,
         ],
-        step: propsConfig.echartsSeriesStep2,
+        step: propsConfig.echartsSeriesStep,
         lineStyle: {
-          type: propsConfig.echartsSeriesLineStyleType2,
-          width: propsConfig.echartsSeriesLineStyleWidth2,
-          opacity: propsConfig.echartsSeriesLineStyleOpacity2,
+          type: propsConfig.echartsSeriesLineStyleType,
+          width: propsConfig.echartsSeriesLineStyleWidth,
+          opacity: propsConfig.echartsSeriesLineStyleOpacity,
         },
         areaStyle: {
-          opacity: propsConfig.echartsSeriesAreaStyleOpacity2,
+          opacity: propsConfig.echartsSeriesAreaStyleOpacity,
         },
-        legendHoverLink: propsConfig.echartsSeriesLegendHoverLink2,
-        stack: propsConfig.echartsSeriesStack2,
-        smooth: propsConfig.echartsSeriesSmooth2,
-        connectNulls: propsConfig.echartsSeriesConnectNulls2,
+        legendHoverLink: propsConfig.echartsSeriesLegendHoverLink,
+        stack: propsConfig.echartsSeriesStack,
+        smooth: propsConfig.echartsSeriesSmooth,
+        connectNulls: propsConfig.echartsSeriesConnectNulls,
         data: chartData.map(data => data[item]),
-      })),
-    );
+      }))
+      .concat(
+        propsConfig.echartsYRight.map(item => ({
+          type: 'line',
+          name: propsLabel[item],
+          yAxisIndex: 1,
+          showSymbol: propsConfig.echartsSeriesShowSymbol2,
+          showAllSymbol: propsConfig.echartsSeriesShowAllSymbol2,
+          symbol: propsConfig.echartsSeriesSymbol2,
+          symbolSize: [
+            propsConfig.echartsSeriesSymbolSizeWidth2,
+            propsConfig.echartsSeriesSymbolSizeHeight2,
+          ],
+          symbolRotate: propsConfig.echartsSeriesSymbolRotate2,
+          symbolOffset: [
+            propsConfig.echartsSeriesSymbolOffsetHorizontal2,
+            propsConfig.echartsSeriesSymbolOffsetVertical2,
+          ],
+          step: propsConfig.echartsSeriesStep2,
+          lineStyle: {
+            type: propsConfig.echartsSeriesLineStyleType2,
+            width: propsConfig.echartsSeriesLineStyleWidth2,
+            opacity: propsConfig.echartsSeriesLineStyleOpacity2,
+          },
+          areaStyle: {
+            opacity: propsConfig.echartsSeriesAreaStyleOpacity2,
+          },
+          legendHoverLink: propsConfig.echartsSeriesLegendHoverLink2,
+          stack: propsConfig.echartsSeriesStack2,
+          smooth: propsConfig.echartsSeriesSmooth2,
+          connectNulls: propsConfig.echartsSeriesConnectNulls2,
+          data: chartData.map(data => data[item]),
+        })),
+      );
+  }
 
   chart.setOption({
     legend: {
@@ -115,7 +168,10 @@ function drawChart(chart, teamData, teamIndex, propsConfig, propsLabel) {
       itemHeight: propsConfig.echartsLegendItemHeight,
       icon: propsConfig.echartsLegendIcon,
       selected: legendNotSelected,
-      data: legendData.map(data => propsLabel[data]),
+      data:
+        propsConfig.echartsScene === 'scene_1'
+          ? legendData
+          : legendData.map(data => propsLabel[data]),
     },
     grid: {
       show: propsConfig.echartsGridShow,

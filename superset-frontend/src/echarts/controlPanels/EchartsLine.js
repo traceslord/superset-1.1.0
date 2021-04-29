@@ -85,6 +85,23 @@ export default {
   controlPanelSections: [
     sections.legacyTimeseriesTime,
     {
+      label: '特殊场景',
+      controlSetRows: [
+        [
+          {
+            name: 'echarts_scene',
+            config: {
+              type: 'SelectControl',
+              label: '场景',
+              description: '适配特殊场景的数据结构',
+              default: '',
+              choices: [['scene_1', '题库全局概览']],
+            },
+          },
+        ],
+      ],
+    },
+    {
       label: '配置选项',
       expanded: true,
       controlSetRows: [
