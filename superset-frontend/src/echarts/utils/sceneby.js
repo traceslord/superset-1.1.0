@@ -1,6 +1,5 @@
 import { formatDate } from './dates';
 
-// eslint-disable-next-line consistent-return
 export const scenelegendData = (arr, scene, yAxis) => {
   if (scene === 'scene_1') {
     const yAxisList = [];
@@ -9,9 +8,9 @@ export const scenelegendData = (arr, scene, yAxis) => {
     });
     return yAxisList.map(data => String(data));
   }
+  return [];
 };
 
-// eslint-disable-next-line consistent-return
 export const sceneby = (arr, scene, yAxis, xAxis, type) => {
   if (scene === 'scene_1') {
     const xAxisList = [];
@@ -58,28 +57,20 @@ export const sceneby = (arr, scene, yAxis, xAxis, type) => {
       Object.keys(data).forEach(subdata => {
         if (typeof data[subdata] === 'string') return;
         if (!index) {
-          // eslint-disable-next-line no-param-reassign
           data[subdata].level_1_sum = data[subdata].level_1_count;
-          // eslint-disable-next-line no-param-reassign
           data[subdata].level_2_sum = data[subdata].level_2_count;
-          // eslint-disable-next-line no-param-reassign
           data[subdata].level_3_sum = data[subdata].level_3_count;
-          // eslint-disable-next-line no-param-reassign
           data[subdata].sum =
             data[subdata].level_1_count +
             data[subdata].level_2_count +
             data[subdata].level_3_count;
         } else {
-          // eslint-disable-next-line no-param-reassign
           data[subdata].level_1_sum =
             data[subdata].level_1_count + self[index - 1][subdata].level_1_sum;
-          // eslint-disable-next-line no-param-reassign
           data[subdata].level_2_sum =
             data[subdata].level_2_count + self[index - 1][subdata].level_2_sum;
-          // eslint-disable-next-line no-param-reassign
           data[subdata].level_3_sum =
             data[subdata].level_3_count + self[index - 1][subdata].level_3_sum;
-          // eslint-disable-next-line no-param-reassign
           data[subdata].sum =
             data[subdata].level_1_count +
             data[subdata].level_2_count +
@@ -90,4 +81,5 @@ export const sceneby = (arr, scene, yAxis, xAxis, type) => {
     });
     return scenebyList;
   }
+  return arr;
 };

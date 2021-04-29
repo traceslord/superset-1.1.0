@@ -7,7 +7,6 @@ import { formatDate } from 'src/echarts/utils/dates';
 import selectLayout from '../layout/selectLayout';
 
 function drawChart(chart, teamData, teamIndex, propsConfig, propsLabel) {
-  // eslint-disable-next-line no-param-reassign
   propsConfig = defaultby(propsConfig);
 
   let chartData = teamData[teamIndex];

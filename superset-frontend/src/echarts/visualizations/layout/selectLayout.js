@@ -53,7 +53,6 @@ function selectLayout(element, props, drawChart) {
     id="echarts-${randomNumber}"
     style="width: ${props.width}px; height: ${props.height}px"
   ></div>`;
-  // eslint-disable-next-line no-param-reassign
   element.innerHTML = html;
   const chart = echarts.init(
     document.getElementById(`echarts-${randomNumber}`),
