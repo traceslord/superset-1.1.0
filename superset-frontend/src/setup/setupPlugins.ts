@@ -23,6 +23,7 @@ import setupPluginsExtra from './setupPluginsExtra';
 import Separator from '../explore/controlPanels/Separator';
 import TimeTable from '../explore/controlPanels/TimeTable';
 
+import EchartsBar from '../echarts/controlPanels/EchartsBar';
 import EchartsLine from '../echarts/controlPanels/EchartsLine';
 
 export default function setupPlugins() {
@@ -32,6 +33,7 @@ export default function setupPlugins() {
   getChartControlPanelRegistry()
     .registerValue('separator', Separator)
     .registerValue('time_table', TimeTable)
+    .registerValue('echarts_bar', EchartsBar)
     .registerValue('echarts_line', EchartsLine);
 
   setupPluginsExtra();
