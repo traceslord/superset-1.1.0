@@ -124,6 +124,17 @@ const echartsControls = {
       }),
     },
   },
+  echartsPicker: {
+    name: 'echarts_picker',
+    config: {
+      type: 'SelectControl',
+      label: '时间选择器',
+      default: null,
+      mapStateToProps: state => ({
+        choices: state.datasource ? state.datasource.granularity_sqla : [],
+      }),
+    },
+  },
   echartsGroupby: {
     name: 'echarts_groupby',
     config: {
