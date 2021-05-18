@@ -57,6 +57,26 @@ export const defaultby = config => {
   if (!val.echartsSeriesBarCategoryGap) val.echartsSeriesBarCategoryGap = '';
   if (!val.echartsAxisSwap) val.echartsAxisSwap = false;
 
+  if (!val.echartsSeriesName) val.echartsSeriesName = '';
+  if (!val.echartsPieStartAngle) val.echartsPieStartAngle = 0;
+  if (!val.echartsPieMinAngle) val.echartsPieMinAngle = 0;
+  if (!val.echartsPieMinShowLabelAngle) val.echartsPieMinShowLabelAngle = 0;
+  if (!val.echartsPieRoseType) val.echartsPieRoseType = null;
+  if (!val.echartsPieTop) val.echartsPieTop = '';
+  if (!val.echartsPieBottom) val.echartsPieBottom = '';
+  if (!val.echartsPieLeft) val.echartsPieLeft = '';
+  if (!val.echartsPieRight) val.echartsPieRight = '';
+  if (!val.echartsPieWidth) val.echartsPieWidth = '';
+  if (!val.echartsPieHeight) val.echartsPieHeight = '';
+  if (!val.echartsSeriesCenter1) val.echartsSeriesCenter1 = '';
+  if (!val.echartsSeriesCenter2) val.echartsSeriesCenter2 = '';
+  if (!val.echartsSeriesRadius1) val.echartsSeriesRadius1 = '';
+  if (!val.echartsSeriesRadius2) val.echartsSeriesRadius2 = '';
+  if (!val.echartsPieLabelShow) val.echartsPieLabelShow = false;
+  if (!val.echartsPieClockwise) val.echartsPieClockwise = false;
+  if (!val.echartsPieAvoidLabelOverlap) val.echartsPieAvoidLabelOverlap = false;
+  if (!val.echartsPieStillShowZeroSum) val.echartsPieStillShowZeroSum = false;
+
   // legend
   if (!val.echartsLegendShow) val.echartsLegendShow = false;
   if (!val.echartsLegendTop) val.echartsLegendTop = '';

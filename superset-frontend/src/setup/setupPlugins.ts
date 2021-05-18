@@ -25,6 +25,7 @@ import TimeTable from '../explore/controlPanels/TimeTable';
 
 import EchartsBar from '../echarts/controlPanels/EchartsBar';
 import EchartsLine from '../echarts/controlPanels/EchartsLine';
+import EchartsPie from '../echarts/controlPanels/EchartsPie';
 
 export default function setupPlugins() {
   new MainPreset().register();
@@ -34,7 +35,8 @@ export default function setupPlugins() {
     .registerValue('separator', Separator)
     .registerValue('time_table', TimeTable)
     .registerValue('echarts_bar', EchartsBar)
-    .registerValue('echarts_line', EchartsLine);
+    .registerValue('echarts_line', EchartsLine)
+    .registerValue('echarts_pie', EchartsPie);
 
   setupPluginsExtra();
 }
