@@ -23,22 +23,13 @@ import setupPluginsExtra from './setupPluginsExtra';
 import Separator from '../explore/controlPanels/Separator';
 import TimeTable from '../explore/controlPanels/TimeTable';
 
-import {
-  JkEchartsBar,
-  JkEchartsLine,
-  JkEchartsPie,
-} from '../echarts/controlPanels';
-
 export default function setupPlugins() {
   new MainPreset().register();
 
   // TODO: Remove these shims once the control panel configs are moved into the plugin package.
   getChartControlPanelRegistry()
     .registerValue('separator', Separator)
-    .registerValue('time_table', TimeTable)
-    .registerValue('echarts_bar', JkEchartsBar)
-    .registerValue('echarts_line', JkEchartsLine)
-    .registerValue('echarts_pie', JkEchartsPie);
+    .registerValue('time_table', TimeTable);
 
   setupPluginsExtra();
 }

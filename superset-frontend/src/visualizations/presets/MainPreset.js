@@ -68,7 +68,7 @@ import {
   JkEchartsBarChartPlugin,
   JkEchartsLineChartPlugin,
   JkEchartsPieChartPlugin,
-} from 'src/echarts';
+} from 'src/jk';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
 import TimeTableChartPlugin from '../TimeTable/TimeTableChartPlugin';
 
