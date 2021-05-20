@@ -1,5 +1,5 @@
 import { sections } from '@superset-ui/chart-controls';
-import echartsControls from '../controls';
+import controls from './controls';
 
 const {
   echartsX,
@@ -80,7 +80,7 @@ const {
   echartsToolboxFeatureMagicTypeShow,
   echartsToolboxFeatureDataZoomShow,
   echartsToolboxFeatureRestoreShow,
-} = echartsControls;
+} = controls;
 
 export default {
   controlPanelSections: [

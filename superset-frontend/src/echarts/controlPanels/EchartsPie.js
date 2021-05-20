@@ -1,5 +1,5 @@
 import { sections } from '@superset-ui/chart-controls';
-import echartsControls from '../controls';
+import controls, { formatSelectOptions } from './controls';
 
 const {
   echartsIndicators,
@@ -49,7 +49,7 @@ const {
   echartsToolboxFeatureMagicTypeShow,
   echartsToolboxFeatureDataZoomShow,
   echartsToolboxFeatureRestoreShow,
-} = echartsControls;
+} = controls;
 
 export default {
   controlPanelSections: [
@@ -140,10 +140,7 @@ export default {
               description:
                 '通过半径区分数据大小，模式：radius —— 扇区圆心角展现数据的百分比，半径展现数据的大小；area ——  所有扇区圆心角相同，仅通过半径展现数据大小。',
               default: null,
-              choices: [
-                ['radius', 'radius'],
-                ['area', 'area'],
-              ],
+              choices: formatSelectOptions(['radius', 'area']),
               renderTrigger: true,
             },
           },
@@ -280,11 +277,7 @@ export default {
               description:
                 'outside —— 饼图扇区外侧，通过视觉引导线连到相应的扇区；inside —— 饼图扇区内部；center —— 在饼图中心位置。',
               default: 'outside',
-              choices: [
-                ['outside', 'outside'],
-                ['inside', 'inside'],
-                ['center', 'center'],
-              ],
+              choices: formatSelectOptions(['outside', 'inside', 'center']),
               clearable: false,
               renderTrigger: true,
             },

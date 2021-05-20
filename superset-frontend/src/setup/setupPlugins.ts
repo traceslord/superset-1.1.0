@@ -23,9 +23,11 @@ import setupPluginsExtra from './setupPluginsExtra';
 import Separator from '../explore/controlPanels/Separator';
 import TimeTable from '../explore/controlPanels/TimeTable';
 
-import EchartsBar from '../echarts/controlPanels/EchartsBar';
-import EchartsLine from '../echarts/controlPanels/EchartsLine';
-import EchartsPie from '../echarts/controlPanels/EchartsPie';
+import {
+  JkEchartsBar,
+  JkEchartsLine,
+  JkEchartsPie,
+} from '../echarts/controlPanels';
 
 export default function setupPlugins() {
   new MainPreset().register();
@@ -34,9 +36,9 @@ export default function setupPlugins() {
   getChartControlPanelRegistry()
     .registerValue('separator', Separator)
     .registerValue('time_table', TimeTable)
-    .registerValue('echarts_bar', EchartsBar)
-    .registerValue('echarts_line', EchartsLine)
-    .registerValue('echarts_pie', EchartsPie);
+    .registerValue('echarts_bar', JkEchartsBar)
+    .registerValue('echarts_line', JkEchartsLine)
+    .registerValue('echarts_pie', JkEchartsPie);
 
   setupPluginsExtra();
 }
