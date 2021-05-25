@@ -129,6 +129,7 @@ if (!process.env.CI) {
 if (!isDevServer) {
   plugins.push(
     new CleanWebpackPlugin({
+      dry: true,
       // required because the build directory is outside the frontend directory:
       dangerouslyAllowCleanPatternsOutsideProject: true,
     }),
