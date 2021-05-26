@@ -203,16 +203,16 @@ export function Menu({
               {settings.map((section, index) => [
                 <DropdownMenu.ItemGroup
                   key={`${section.label}`}
-                  title={section.label}
+                  title={t(section.label)}
                 >
                   {section.childs?.map(child => {
                     if (typeof child !== 'string') {
                       return (
                         <DropdownMenu.Item key={`${child.label}`}>
                           {isFrontendRoute(child.url) ? (
-                            <Link to={child.url || ''}>{child.label}</Link>
+                            <Link to={child.url || ''}>{t(child.label)}</Link>
                           ) : (
-                            <a href={child.url}>{child.label}</a>
+                            <a href={child.url}>{t(child.label)}</a>
                           )}
                         </DropdownMenu.Item>
                       );
