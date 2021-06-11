@@ -68,6 +68,7 @@ import {
   JkEchartsBarChartPlugin,
   JkEchartsLineChartPlugin,
   JkEchartsPieChartPlugin,
+  JkEchartsHydrographChartPlugin,
 } from 'src/jk';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
 import TimeTableChartPlugin from '../TimeTable/TimeTableChartPlugin';
@@ -123,6 +124,9 @@ export default class MainPreset extends Preset {
         new JkEchartsBarChartPlugin().configure({ key: 'echarts_bar' }),
         new JkEchartsLineChartPlugin().configure({ key: 'echarts_line' }),
         new JkEchartsPieChartPlugin().configure({ key: 'echarts_pie' }),
+        new JkEchartsHydrographChartPlugin().configure({
+          key: 'echarts_hydrograph',
+        }),
       ],
     });
   }
