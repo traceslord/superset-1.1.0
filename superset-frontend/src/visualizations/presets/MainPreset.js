@@ -66,9 +66,10 @@ import {
 } from 'src/filters/components/';
 import {
   JkEchartsBarChartPlugin,
-  JkEchartsLineChartPlugin,
-  JkEchartsPieChartPlugin,
   JkEchartsHydrographChartPlugin,
+  JkEchartsLineChartPlugin,
+  JkEchartsLineBarChartPlugin,
+  JkEchartsPieChartPlugin,
   JkNumberChartPlugin,
 } from 'src/jk';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
@@ -123,11 +124,14 @@ export default class MainPreset extends Preset {
         new RangeFilterPlugin().configure({ key: 'filter_range' }),
         new TimeFilterPlugin().configure({ key: 'filter_time' }),
         new JkEchartsBarChartPlugin().configure({ key: 'echarts_bar' }),
-        new JkEchartsLineChartPlugin().configure({ key: 'echarts_line' }),
-        new JkEchartsPieChartPlugin().configure({ key: 'echarts_pie' }),
         new JkEchartsHydrographChartPlugin().configure({
           key: 'echarts_hydrograph',
         }),
+        new JkEchartsLineChartPlugin().configure({ key: 'echarts_line' }),
+        new JkEchartsLineBarChartPlugin().configure({
+          key: 'echarts_line_bar',
+        }),
+        new JkEchartsPieChartPlugin().configure({ key: 'echarts_pie' }),
         new JkNumberChartPlugin().configure({ key: 'jk_number' }),
       ],
     });
