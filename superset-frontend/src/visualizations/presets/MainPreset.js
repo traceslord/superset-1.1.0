@@ -71,6 +71,7 @@ import {
   JkEchartsLineChartPlugin,
   JkEchartsLineBarChartPlugin,
   JkEchartsPieChartPlugin,
+  JkEchartsScatterChartPlugin,
   JkNumberChartPlugin,
 } from 'src/jk';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
@@ -134,6 +135,7 @@ export default class MainPreset extends Preset {
           key: 'echarts_line_bar',
         }),
         new JkEchartsPieChartPlugin().configure({ key: 'echarts_pie' }),
+        new JkEchartsScatterChartPlugin().configure({ key: 'echarts_scatter' }),
         new JkNumberChartPlugin().configure({ key: 'jk_number' }),
       ],
     });
