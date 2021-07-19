@@ -66,6 +66,7 @@ import {
 } from 'src/filters/components/';
 import {
   JkEchartsBarChartPlugin,
+  JkEchartsGanttChartPlugin,
   JkEchartsHydrographChartPlugin,
   JkEchartsLineChartPlugin,
   JkEchartsLineBarChartPlugin,
@@ -124,6 +125,7 @@ export default class MainPreset extends Preset {
         new RangeFilterPlugin().configure({ key: 'filter_range' }),
         new TimeFilterPlugin().configure({ key: 'filter_time' }),
         new JkEchartsBarChartPlugin().configure({ key: 'echarts_bar' }),
+        new JkEchartsGanttChartPlugin().configure({ key: 'echarts_gantt' }),
         new JkEchartsHydrographChartPlugin().configure({
           key: 'echarts_hydrograph',
         }),
