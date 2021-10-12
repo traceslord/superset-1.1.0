@@ -1,11 +1,15 @@
 import { sections } from '@superset-ui/chart-controls';
 import controls from '../controls';
 
-const { echartsBackgroundColor } = controls;
+const { echartsBackgroundColor, echartsDataPreprocessing } = controls;
 
 export default {
   controlPanelSections: [
     sections.legacyTimeseriesTime,
+    {
+      label: '数据预处理',
+      controlSetRows: [[echartsDataPreprocessing]],
+    },
     {
       label: '配置选项',
       expanded: true,
