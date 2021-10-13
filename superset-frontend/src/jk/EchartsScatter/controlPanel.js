@@ -13,6 +13,7 @@ const {
   echartsOrder,
   echartsBackgroundColor,
 
+  echartsPreprocessingData,
   echartsDataPreprocessing,
 
   echartsLegendShow,
@@ -88,7 +89,7 @@ export default {
     sections.legacyTimeseriesTime,
     {
       label: '数据预处理',
-      controlSetRows: [[echartsDataPreprocessing]],
+      controlSetRows: [[echartsPreprocessingData], [echartsDataPreprocessing]],
     },
     {
       label: '配置选项',
