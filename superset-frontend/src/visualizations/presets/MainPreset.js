@@ -66,6 +66,7 @@ import TableChartPlugin from '@superset-ui/plugin-chart-table';
 // } from 'src/filters/components/';
 import {
   JkEchartsBarChartPlugin,
+  JkEchartsDiyChartPlugin,
   JkEchartsGanttChartPlugin,
   JkEchartsHydrographChartPlugin,
   JkEchartsLineChartPlugin,
@@ -127,6 +128,7 @@ export default class MainPreset extends Preset {
         // new RangeFilterPlugin().configure({ key: 'filter_range' }),
         // new TimeFilterPlugin().configure({ key: 'filter_time' }),
         new JkEchartsBarChartPlugin().configure({ key: 'echarts_bar' }),
+        new JkEchartsDiyChartPlugin().configure({ key: 'echarts_diy' }),
         new JkEchartsGanttChartPlugin().configure({ key: 'echarts_gantt' }),
         new JkEchartsHydrographChartPlugin().configure({
           key: 'echarts_hydrograph',
