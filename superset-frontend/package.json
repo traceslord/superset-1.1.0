@@ -116,7 +116,7 @@
     "global-box": "^1.2.0",
     "immutable": "^4.0.0-rc.12",
     "interweave": "^11.2.0",
-    "jk-superset-echarts-plugin": "^2.8.1",
+    "jk-superset-echarts-plugin": "^2.8.2",
     "jquery": "^3.5.1",
     "js-levenshtein": "^1.1.6",
     "json-bigint": "^1.0.0",
